@@ -178,6 +178,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\cyBill.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\cyTariff.cpp"
 				>
 			</File>
@@ -208,11 +212,11 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\cyTariff.h"
+				RelativePath=".\cyBill.h"
 				>
 			</File>
 			<File
-				RelativePath=".\resource.h"
+				RelativePath=".\cyTariff.h"
 				>
 			</File>
 			<File
