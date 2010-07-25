@@ -6,11 +6,11 @@ using namespace cyPaym;
 
 namespace cySession {
 
-	public ref class cySessionHandler
-	{
+	public ref class cySessionHandler {
 	private:
 		void tariff_changingTariffCost(cyTariff ^tariff);
 		void tariff_changedTariffCost(cyTariff ^tariff);
+
 	protected:
 		List<cyUsedTime^> ^_timeList;
 		int _cacheUsedTime;

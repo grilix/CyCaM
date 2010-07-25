@@ -7,8 +7,7 @@ namespace cyPaym {
 	ref class cyTariff;
 	public delegate void TariffEvent(cyTariff ^tariff);
 
-	public ref class cyTariff
-	{
+	public ref class cyTariff {
 	protected:
 		String ^_name;
 		float _cost;
