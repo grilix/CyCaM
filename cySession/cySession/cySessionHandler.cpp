@@ -70,9 +70,17 @@ int cySessionHandler::getAvailableTime(void) {
 	}
 	return this->_tariff->moneyToTime(this->_bill->getAvailable()) - this->getTotalTime();
 }
+bool cySessionHandler::timeIsOver(void) {
+	if (!this->_isPrepaid) {
+		return false;
+	}
+	return this->getAvailableTime() <= 0;
+}
 float cySessionHandler::getTotalMoney(void) {
 	return this->_cacheUsedMoney + (this->_activeIsSet ? _active->getUsedMoney() : 0);
 }
-cySessionHandler::~cySessionHandler(void)
-{
+cySessionHandler::~cySessionHandler(void) {
+	delete this->_timeList;
+	this->_tariff->changingTariffCost::remove(gcnew TariffEvent(this, &cySessionHandler::tariff_changingTariffCost));
+	this->_tariff->changedTariffCost::remove(gcnew TariffEvent(this, &cySessionHandler::tariff_changedTariffCost));
 }
