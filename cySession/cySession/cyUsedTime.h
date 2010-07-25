@@ -5,8 +5,7 @@ using namespace cyPaym;
 
 namespace cySession {
 
-	public ref class cyUsedTime
-	{
+	public ref class cyUsedTime {
 	protected:
 		cyTariff ^_tariff;
 		int _timeStart;
@@ -16,6 +15,7 @@ namespace cySession {
 		int _usedTime;
 		float _usedMoney;
 
+		void initializeObj(cyTariff ^tariff, DateTime timeStart);
 	public:
 		cyUsedTime(cyTariff ^tariff, DateTime timeStart);
 		cyUsedTime(cyTariff ^tariff, DateTime timeStart, DateTime timeEnd);

@@ -3,7 +3,7 @@
 #include "cyUsedTime.h"
 using namespace cySession;
 
-cyUsedTime::cyUsedTime(cyTariff ^tariff, DateTime timeStart) {
+void cyUsedTime::initializeObj(cyTariff ^tariff, DateTime timeStart) {
 	this->_tariff = tariff;
 	this->_timeStart = this->timeToTicks(timeStart);
 	this->_isRunning = true;
@@ -11,8 +11,11 @@ cyUsedTime::cyUsedTime(cyTariff ^tariff, DateTime timeStart) {
 	this->_usedTime = 0;
 	this->_usedMoney = 0;
 }
+cyUsedTime::cyUsedTime(cyTariff ^tariff, DateTime timeStart) {
+	this->initializeObj(tariff, timeStart);
+}
 cyUsedTime::cyUsedTime(cyTariff ^tariff, DateTime timeStart, DateTime timeEnd) {
-	cyUsedTime(tariff, timeStart);
+	this->initializeObj(tariff, timeStart);
 	this->close(timeEnd);
 }
 cyUsedTime::~cyUsedTime(void) {
