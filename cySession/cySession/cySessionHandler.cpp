@@ -64,6 +64,12 @@ void cySessionHandler::addTime(cyUsedTime ^time) {
 int cySessionHandler::getTotalTime(void) {
 	return this->_cacheUsedTime + (this->_activeIsSet ? _active->getUsedTime() : 0);
 }
+int cySessionHandler::getAvailableTime(void) {
+	if (!this->_isPrepaid) {
+		return 0;
+	}
+	return this->_tariff->moneyToTime(this->_bill->getAvailable()) - this->getTotalTime();
+}
 float cySessionHandler::getTotalMoney(void) {
 	return this->_cacheUsedMoney + (this->_activeIsSet ? _active->getUsedMoney() : 0);
 }
