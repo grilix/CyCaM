@@ -16,15 +16,22 @@ void cySessionHandler::tariff_changedTariffCost(cyTariff ^tariff) {
 		this->startNewTime();
 	}
 }
-
-cySessionHandler::cySessionHandler(cyTariff ^tariff)
-{
+void cySessionHandler::initializeObj(cyTariff ^tariff) {
 	this->_timeList = gcnew List<cyUsedTime^>();
 	this->_activeIsSet = false;
 	this->_activeWasSet = false;
 	this->_tariff = tariff;
-	tariff->changingTariffCost += gcnew TariffEvent(this, &cySessionHandler::tariff_changingTariffCost);
-	tariff->changedTariffCost += gcnew TariffEvent(this, &cySessionHandler::tariff_changedTariffCost);
+	this->_isPrepaid = false;
+	this->_tariff->changingTariffCost::add(gcnew TariffEvent(this, &cySessionHandler::tariff_changingTariffCost));
+	this->_tariff->changedTariffCost::add(gcnew TariffEvent(this, &cySessionHandler::tariff_changedTariffCost));
+}
+cySessionHandler::cySessionHandler(cyTariff ^tariff) {
+	this->initializeObj(tariff);
+}
+cySessionHandler::cySessionHandler(cyTariff ^tariff, cyBill ^bill) {
+	this->initializeObj(tariff);
+	this->_isPrepaid = true;
+	this->_bill = bill;
 }
 void cySessionHandler::startNewTime(void) {
 	if (this->_activeIsSet) {
