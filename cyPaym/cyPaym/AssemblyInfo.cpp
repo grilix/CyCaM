@@ -12,13 +12,13 @@ using namespace System::Security::Permissions;
 // associated with an assembly.
 //
 [assembly:AssemblyTitleAttribute("cyPaym")];
-[assembly:AssemblyDescriptionAttribute("")];
-[assembly:AssemblyConfigurationAttribute("")];
-[assembly:AssemblyCompanyAttribute("")];
+//[assembly:AssemblyDescriptionAttribute("")];
+//[assembly:AssemblyConfigurationAttribute("")];
+//[assembly:AssemblyCompanyAttribute("")];
 [assembly:AssemblyProductAttribute("cyPaym")];
 [assembly:AssemblyCopyrightAttribute("Copyright (c)  2010")];
 [assembly:AssemblyTrademarkAttribute("")];
-[assembly:AssemblyCultureAttribute("")];
+//[assembly:AssemblyCultureAttribute("")];
 
 //
 // Version information for an assembly consists of the following four values:
@@ -32,9 +32,3 @@ using namespace System::Security::Permissions;
 // by using the '*' as shown below:
 
 [assembly:AssemblyVersionAttribute("1.0.*")];
-
-[assembly:ComVisible(false)];
-
-[assembly:CLSCompliantAttribute(false)];
-
-[assembly:SecurityPermission(SecurityAction::RequestMinimum, UnmanagedCode = true)];

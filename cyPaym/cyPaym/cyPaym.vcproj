@@ -92,6 +92,7 @@
 			OutputDirectory="$(SolutionDir)..\bin"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="2"
+			UseOfMFC="2"
 			CharacterSet="1"
 			ManagedExtensions="1"
 			WholeProgramOptimization="1"
