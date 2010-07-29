@@ -14,7 +14,8 @@ cyClient::cyClient(String ^name, cySessionHandler ^session, String ^hostName) {
 	this->_session = session;
 }
 cyClient::cyClient(String ^name, cySessionHandler ^session) {
-	cyClient::cyClient(name, session, "");
+	this->_name = name;
+	this->_session = session;
 }
 cyClient::~cyClient(void) {
 
