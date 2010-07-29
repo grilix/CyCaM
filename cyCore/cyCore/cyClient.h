@@ -31,5 +31,10 @@ namespace cyCore {
 				this->_session = session;
 			}
 		}
+		property String ^name {
+			String ^get() {
+				return this->_name;
+			}
+		}
 	};
 }
